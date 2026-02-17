@@ -1,6 +1,6 @@
 # HODL Fee Distributor
 
-![HODL Fee Distribution](https://image2url.com/r2/default/images/1771353258314-3bdaf16e-ec4e-4fb9-8b91-b8ad46e3dc5c.jpg)
+![HODL Fee Distribution](https://i.imgur.com/gr3sQna.jpeg)
 
 ## Overview
 
