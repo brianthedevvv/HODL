@@ -1,10 +1,10 @@
-# HODL Fee Distributor
+# Sabr (صبر ) Fee Distributor
 
-![HODL Fee Distribution](https://i.imgur.com/gr3sQna.jpeg)
+![Sabr (صبر ) Fee Distribution](https://i.imgur.com/gr3sQna.jpeg)
 
 ## Overview
 
-HODL Fee Distributor is an automated Solana-based script that claims creator fees from Pump Fun and distributes them equally to all HODL token holders every 15 minutes. This addresses the limitation of Pump Fun's current fee-sharing model, which only rewards active traders rather than long-term holders.
+Sabr (صبر ) Fee Distributor is an automated Solana-based script that claims creator fees from Pump Fun and distributes them equally to all Sabr (صبر ) token holders every 15 minutes. This addresses the limitation of Pump Fun's current fee-sharing model, which only rewards active traders rather than long-term holders.
 
 ## Problem Statement
 
@@ -17,10 +17,10 @@ This creates an unfair dynamic where the same amount of SOL locked in a position
 
 ## Solution
 
-The HODL Fee Distributor automatically:
+The Sabr (صبر ) Fee Distributor automatically:
 
 1. **Collects** creator fees from Pump Fun every 15 minutes
-2. **Identifies** all active HODL token holders on the blockchain
+2. **Identifies** all active Sabr (صبر ) token holders on the blockchain
 3. **Distributes** fees equally among all holders in a fair, transparent manner
 
 This ensures that holders are rewarded for their support, creating a more inclusive and equitable reward system.
@@ -28,7 +28,7 @@ This ensures that holders are rewarded for their support, creating a more inclus
 ## Features
 
 - ✅ **Automated Fee Collection** - Claims Pump Fun creator fees on a 15-minute cycle
-- ✅ **Equal Distribution** - Divides fees equally among all HODL holders regardless of holding amount
+- ✅ **Equal Distribution** - Divides fees equally among all Sabr (صبر ) holders regardless of holding amount
 - ✅ **Transparent** - All transactions are logged and verifiable on Solscan
 - ✅ **Error Handling** - Includes retry logic and error reporting
 - ✅ **Continuous Operation** - Runs as an always-on service with automatic restarts
@@ -43,8 +43,8 @@ The script connects to Pump Fun's API and claims accumulated creator fees every 
 Pump Fun API → Claim Creator Fees → Sign Transaction → Broadcast to Network
 ```
 
-### Step 2: Fetch HODL Holders
-The script queries the Solana blockchain to identify all current HODL token holders.
+### Step 2: Fetch Sabr (صبر ) Holders
+The script queries the Solana blockchain to identify all current Sabr (صبر ) token holders.
 
 ```
 Solana RPC → getTokenLargestAccounts → Get all holder addresses
@@ -79,8 +79,8 @@ The entire process repeats automatically every 15 minutes.
 
 1. **Clone the repository:**
 ```bash
-git clone https://github.com/yourusername/hodl-fee-distributor.git
-cd hodl-fee-distributor
+git clone https://github.com/yourusername/Sabr (صبر )-fee-distributor.git
+cd Sabr (صبر )-fee-distributor
 ```
 
 2. **Install dependencies:**
@@ -93,12 +93,12 @@ pip install -r requirements.txt
 PUBLIC_KEY=Your_Solana_Public_Key
 PRIVATE_KEY=Your_Base58_Private_Key
 RPC_ENDPOINT=https://api.mainnet-beta.solana.com/
-HODL_MINT=Your_HODL_Token_Mint_Address
+Sabr (صبر )_MINT=Your_Sabr (صبر )_Token_Mint_Address
 ```
 
 4. **Run the script:**
 ```bash
-python hodl_fee_distributor.py
+python Sabr (صبر )_fee_distributor.py
 ```
 
 ## Configuration
@@ -110,7 +110,7 @@ Edit these values in the script or environment variables:
 | `PUBLIC_KEY` | Your Solana wallet address | `SoL...` |
 | `PRIVATE_KEY` | Your private key (base58 format) | `xxxxxx` |
 | `RPC_ENDPOINT` | Solana RPC endpoint | `https://api.mainnet-beta.solana.com/` |
-| `HODL_MINT` | HODL token mint address | `DfqJgvZXk...` |
+| `Sabr (صبر )_MINT` | Sabr (صبر ) token mint address | `DfqJgvZXk...` |
 | `DISTRIBUTION_INTERVAL` | Interval between distributions (seconds) | `900` (15 mins) |
 | `PRIORITY_FEE` | Solana priority fee in SOL | `0.000001` |
 
@@ -123,8 +123,8 @@ The script logs all activity with timestamps and transaction links:
 ✓ Fees claimed successfully!
 Transaction: https://solscan.io/tx/xxxxx
 
-[2026-02-17 10:00:05] Fetching HODL holders...
-Found 1,250 HODL holders
+[2026-02-17 10:00:05] Fetching Sabr (صبر ) holders...
+Found 1,250 Sabr (صبر ) holders
 
 [2026-02-17 10:00:10] Distributing fees to 1,250 holders...
 Distributing 0.0000450 SOL to each holder...
@@ -162,8 +162,8 @@ The wallet doesn't have enough SOL. Send more SOL to your wallet.
 ### "Error claiming creator fees"
 Check that your public key and Pump Fun API are accessible. Verify RPC endpoint is working.
 
-### "Error fetching HODL holders"
-Ensure the `HODL_MINT` address is correct and the token exists on the blockchain.
+### "Error fetching Sabr (صبر ) holders"
+Ensure the `Sabr (صبر )_MINT` address is correct and the token exists on the blockchain.
 
 ### "Transaction failed"
 Check Solscan for transaction details. May be due to insufficient SOL or RPC issues.
@@ -207,4 +207,4 @@ Use at your own risk and always test in a development environment first.
 
 ---
 
-**Built with ❤️ for the HODL community**
+**Built with ❤️ for the Sabr (صبر ) community**
