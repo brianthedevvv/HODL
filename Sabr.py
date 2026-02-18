@@ -14,7 +14,7 @@ from solders.pubkey import Pubkey
 PUBLIC_KEY = "Your public key here"
 PRIVATE_KEY = "Your base 58 private key here"
 RPC_ENDPOINT = "Your RPC Endpoint here - Eg: https://api.mainnet-beta.solana.com/"
-HODL_MINT = "HODL token mint address here"
+Sabr_MINT = "Sabr token mint address here"
 DISTRIBUTION_INTERVAL = 15 * 60  # 15 minutes in seconds
 PRIORITY_FEE = 0.000001
 
@@ -53,12 +53,12 @@ def claim_creator_fees():
         print(f"Error claiming creator fees: {str(e)}")
         return None
 
-def get_hodl_holders():
-    """Get all HODL token holders from blockchain"""
-    print(f"[{datetime.now()}] Fetching HODL holders...")
+def get_Sabr_holders():
+    """Get all Sabr token holders from blockchain"""
+    print(f"[{datetime.now()}] Fetching Sabr holders...")
     
     try:
-        # This fetches token accounts holding HODL
+        # This fetches token accounts holding Sabr
         response = requests.post(
             url=RPC_ENDPOINT,
             headers={"Content-Type": "application/json"},
@@ -66,16 +66,16 @@ def get_hodl_holders():
                 "jsonrpc": "2.0",
                 "id": 1,
                 "method": "getTokenLargestAccounts",
-                "params": [HODL_MINT]
+                "params": [Sabr_MINT]
             }
         )
         
         holders = response.json()['result']['value']
-        print(f"Found {len(holders)} HODL holders")
+        print(f"Found {len(holders)} Sabr holders")
         return holders
         
     except Exception as e:
-        print(f"Error fetching HODL holders: {str(e)}")
+        print(f"Error fetching Sabr holders: {str(e)}")
         return []
 
 def get_wallet_balance():
@@ -101,7 +101,7 @@ def get_wallet_balance():
         return 0
 
 def distribute_fees_to_holders(holders, total_amount_sol):
-    """Distribute fees equally to all HODL holders"""
+    """Distribute fees equally to all Sabr holders"""
     print(f"[{datetime.now()}] Distributing fees to {len(holders)} holders...")
     
     if not holders or total_amount_sol <= 0:
@@ -166,7 +166,7 @@ def distribute_fees_to_holders(holders, total_amount_sol):
 def main():
     """Main loop that runs every 15 minutes"""
     print("=" * 60)
-    print("HODL Fee Distributor Started")
+    print("Sabr Fee Distributor Started")
     print("=" * 60)
     print(f"Wallet: {PUBLIC_KEY}")
     print(f"Distribution Interval: {DISTRIBUTION_INTERVAL // 60} minutes")
@@ -184,8 +184,8 @@ def main():
             balance = get_wallet_balance()
             print(f"Current balance: {balance:.9f} SOL")
             
-            # Step 3: Get HODL holders
-            holders = get_hodl_holders()
+            # Step 3: Get Sabr holders
+            holders = get_Sabr_holders()
             
             # Step 4: Distribute fees (keep minimum for next cycle)
             if balance > 0.01:  # Keep 0.01 SOL for transaction fees
